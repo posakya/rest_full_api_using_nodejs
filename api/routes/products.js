@@ -7,16 +7,6 @@ const multer = require('multer');
 const mysql = require('mysql');
 const bodyParser = require("body-parser");
 
-// c onst upload = multer({dest:'uploads/'}).single("demo_image");
-// app.use(express.json());
-// app.use(express.urlencoded());
-
-// app.use(express.json({limit: '50mb'}));
-// app.use(express.urlencoded({limit: '50mb'}));
-
-// const uploadImg = multer({storage: storage});
-
-// const fileName = require('../../uploads/check.js');
 
 var storage = multer.diskStorage({   
    destination: function(req, file, cb) { 
@@ -47,44 +37,7 @@ router.post("/image", (req, res) => {
 
 // router.post('/formUser',(req,res,next) => {
 
-// 	// console.log(fileName);
 
-// 	upload(req, res, (err) => {
-//     if(err) {
-//       res.status(400).json(err);
-//     }
-//      res.json(req.file);
-//   });
-
-	// console.log(req.file);
-
-	// try {
- //        return res.status(201).json({
- //            message: 'File uploded successfully'
- //        });
- //    } catch (error) {
- //        console.error(error);
- //    }
-
-// if (!req.image) {
-//     console.log("No file received");
-//     return res.send({
-//       success: false
-//     });
-
-//   } else {
-//     console.log('file received');
-//     return res.send({
-//       success: true
-//     })
-//   }
-	
-
-	// const newTea = new Tea({ 
-     // name = req.body.name,
-     // image = req.file.path,  //update this
-     // description = req.body.description
-// })
 
 	// name = req.body.name, 
  //   email = req.body.email, 
@@ -125,14 +78,6 @@ router.post("/image", (req, res) => {
 
 // });
 
-// const storage = multer.diskStorage({
-//     destination: function (req, file, cb) {
-//         cb(null, './uploads');
-//       },
-//     filename: function (req, file, cb) {
-//         cb(null, file.originalname);
-//     }
-// });
 
 router.get('/',(req,res,next) => {
    res.setHeader('Access-Control-Allow-Origin', '*');
@@ -279,16 +224,6 @@ router.get('/:productId', (req,res,next) => {
 			}
 		);
 
-	// if (id === 'special'){
-	// 	res.status(200).json({
-	// 	message: 'You discovered the special id',
-	// 	id: id
-	// });
-	// }else{
-	// 	res.status(200).json({
-	// 	message: 'You passed an Id'
-	// });
-	// }
 
 });
 
